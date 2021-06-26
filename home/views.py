@@ -23,7 +23,6 @@ class HouseViewSet(viewsets.ModelViewSet):
 
     @action(detail=False)
     def room_count(self, request):
-        print(request)
         house_id=request.GET.get('house_id', '')
         if house_id:
             q = House.objects.get(id=house_id).rooms.all()
