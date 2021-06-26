@@ -1,0 +1,2 @@
+# house
+Simple Django project
