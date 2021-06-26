@@ -26,7 +26,6 @@ class RoomTestCase(TestCase):
         house=House.objects.create(number=1, address='test address')
         Room.objects.create(number=100, house=house, room_type='bed-room')
 
-        
     def test_create_room(self):
         self.assertEqual(Room.objects.all().count(), 1)
 
