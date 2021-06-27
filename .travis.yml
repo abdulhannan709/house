@@ -6,7 +6,7 @@ python:
 services: postgresql
 
 env:
-  - DJANGO=1.4.1
+  - DJANGO=2.2.12
 
 before_install:
   - export DJANGO_SETTINGS_MODULE=./house.DJANGO_SETTINGS_MODULE
