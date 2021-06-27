@@ -31,7 +31,6 @@ class HouseViewSet(viewsets.ModelViewSet):
             return Response(content)
         return Response('house_id Not found')
 
-    
 
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
