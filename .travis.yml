@@ -9,6 +9,7 @@ env:
   - DJANGO=2.2.12
 
 before_install:
+  - export DJANGO_SETTINGS_MODULE='house.settings'
   - export PYTHONPATH=$HOME/builds/abdulhannan709/house
   - export PIP_USE_MIRRORS=true
 
@@ -21,5 +22,4 @@ before_script:
   - psql -c "CREATE DATABASE mydb;" -U postgres
 
 script:
-  - python manage.py syncdb --noinput
   - coverage run --source='.' manage.py test
