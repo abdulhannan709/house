@@ -7,7 +7,7 @@ jobs:
       OS: ubuntu-latest
       PYTHON: '3.9'
     steps:
-    - uses: checkout@v2
+    - uses: checkout@main
       with:
         fetch-depth: ‘2’
 
@@ -22,3 +22,4 @@ jobs:
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
+        token: 77451731-a88d-4ff1-b9dc-e5a0cca995bc
