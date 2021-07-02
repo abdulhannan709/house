@@ -1,6 +1,6 @@
 from django.test import TestCase
 from home.models import House, Room
-
+from django.shortcuts import reverse
 
 class HouseTestCase(TestCase):
 
@@ -20,6 +20,24 @@ class HouseTestCase(TestCase):
         House.objects.filter(id=1).delete()
         self.assertEqual(House.objects.all().count(), 0)
 
+    def test_room_count(self):
+        url = reverse('house-room-count')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+        url = f"{url}?house_id=1"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_house_list(self):
+        url = reverse('house-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+        url = f"{url}?house_id=1"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
 
 class RoomTestCase(TestCase):
     def setUp(self):
@@ -38,3 +56,12 @@ class RoomTestCase(TestCase):
     def test_delete_room(self):
         Room.objects.filter(id=1).delete()
         self.assertEqual(Room.objects.all().count(), 0)
+
+    def test_room_list(self):
+        url = reverse('room-list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        
+        url = f"{url}?room_type=1"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
