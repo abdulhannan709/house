@@ -20,5 +20,4 @@ from .router import router
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('home/', include(router.urls)),
 ]
