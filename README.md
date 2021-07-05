@@ -2,7 +2,7 @@
 # house
 Simple Django project
 
-For test covergae run following commands in terminal:
-coverage run --source='.' manage.py test
-coverage report
-coverage html -d ../coverage_html
+# Test coverage:
+1. coverage run --source='.' manage.py test
+2. coverage report
+3. coverage html -d ../coverage_html
