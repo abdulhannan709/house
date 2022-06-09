@@ -30,6 +30,15 @@ class HouseViewSet(viewsets.ModelViewSet):
             content = {'count': count}
             return Response(content)
         return Response('house_id Not found')
+    
+    @action(detail=False)
+    def test(self, request):
+        house_id=request.GET.get('house_id', '')
+        while True:
+            q = House.objects.get(id=house_id).rooms.all()
+            count = q.count()
+            content = {'count': count}
+        return Response('house_id Not found')
 
 
 class RoomViewSet(viewsets.ModelViewSet):
