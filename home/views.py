@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import permissions, viewsets
 from .models import House, Room
 
-from .serializers import *
+from .serializers import HouseSerializer, RoomSerializer
 from rest_framework import viewsets
 from django.db.models import Count
 from rest_framework.response import Response
