@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import permissions, viewsets
-from .models import *
+from .models import House, Room
+
 from .serializers import *
 from rest_framework import viewsets
 from django.db.models import Count
