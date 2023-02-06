@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import House, Room
+from .models import *
 
 
 class HouseSerializer(serializers.ModelSerializer):
