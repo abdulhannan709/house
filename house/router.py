@@ -1,4 +1,4 @@
-from home.views import HouseViewSet, RoomViewSet
+from home.views import *
 from rest_framework import routers
 
 router =routers.DefaultRouter()
